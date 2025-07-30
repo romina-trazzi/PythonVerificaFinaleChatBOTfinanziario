@@ -94,6 +94,13 @@ Apri il browser su http://localhost:5000
 ├── .env
 └── README.md
 
+Dopo aver implementato queste modifiche, potrai utilizzare il chatbot per ottenere dati in tempo reale in questi modi:
+
+1. "Dammi i dati in tempo reale per AAPL"
+2. "Qual è il prezzo attuale di TSLA?"
+3. "Ticker MSFT"
+4. "$AMZN" -usando il simbolo $ seguito dal ticker
+
 ✅ Conclusione
 
 Questo progetto dimostra come Python possa essere usato per costruire un'applicazione web interattiva, integrando intelligenza artificiale, scraping web e finanza. Un ottimo esempio di full stack Python development per dati reali.
