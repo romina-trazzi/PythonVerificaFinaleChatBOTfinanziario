@@ -9,17 +9,9 @@ form.addEventListener("submit", function(e) {
     e.preventDefault();
     const message = input.value.trim();
     if (!message) return;
-
+    
     // Aggiungi il messaggio dell'utente
     appendMessage("user", message);
-
-    // Aggiungi animazione di invio
-    const userMessages = chatBox.querySelectorAll('.message.user');
-    const lastUserMessage = userMessages[userMessages.length - 1];
-    if (lastUserMessage) {
-        lastUserMessage.classList.add('message-sent');
-    }
-
     input.value = "";
     input.disabled = true;
     loading.classList.remove("d-none");
@@ -36,7 +28,7 @@ form.addEventListener("submit", function(e) {
         appendMessage("bot", data.response);
     })
     .catch(err => {
-        appendMessage("error", "⚠️ Si è verificato un errore nella richiesta. Riprova tra qualche istante.");
+        appendMessage("bot", "Si è verificato un errore nella richiesta.");
     })
     .finally(() => {
         input.disabled = false;
@@ -48,26 +40,21 @@ form.addEventListener("submit", function(e) {
 // Funzione per aggiungere messaggi alla chat
 function appendMessage(sender, text) {
     const msgDiv = document.createElement("div");
+    msgDiv.className = "message " + sender;
+
     const bubble = document.createElement("div");
-
-    if (sender === "error") {
-        msgDiv.className = "message bot error";
-        bubble.className = "text error";
-    } else {
-        msgDiv.className = "message " + sender;
-        bubble.className = "text";
-    }
-
+    bubble.className = "text";
     bubble.innerHTML = text;
+
     msgDiv.appendChild(bubble);
     chatBox.appendChild(msgDiv);
 
-    // Se c'è un percorso immagine, lo mostriamo
+    // Se c'è un percorso immagine, lo mostriamo come immagine (es. output/charts/abc.png)
     const imageRegex = /(output\/charts\/\S+\.png)/;
     const match = text.match(imageRegex);
     if (match) {
         const img = document.createElement("img");
-        img.src = "/" + match[1];
+        img.src = "/" + match[1];  // Flask serve statico
         img.className = "image-response";
         chatBox.appendChild(img);
     }
