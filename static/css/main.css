@@ -1,5 +1,5 @@
 /* ===== RESET E VARIABILI ===== */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -209,7 +209,7 @@ h2 {
     max-width: 70%;
     font-weight: 500;
     box-shadow: var(--shadow-soft);
-    border: 1px solid var(--border);
+    border: 2px solid black; /* <-- bordo nero evidente */
     transition: all 0.3s ease;
     word-wrap: break-word;
 }
@@ -452,8 +452,8 @@ td {
     table {
         font-size: 0.875rem;
     }
-    
-    td, th {
+     td, th {
         padding: 0.5rem;
     }
+   
 }

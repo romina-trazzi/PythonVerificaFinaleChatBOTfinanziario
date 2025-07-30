@@ -1,4 +1,6 @@
 // Riferimenti agli elementi DOM
+// Riferimenti agli elementi DOM
+
 const form = document.getElementById("chat-form");
 const input = document.getElementById("chat-input");
 const chatBox = document.getElementById("chat-box");
