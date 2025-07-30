@@ -7,6 +7,7 @@ from services.chat_parser import interpret_message
 from services.finance_data import get_price
 from services.currency_data import get_exchange
 from services.glossary import get_definition
+from services.realtime_finance_data import get_realtime_data  # Nuovo import
 
 # Grafici e PDF
 from services.chart_generator import generate_chart
@@ -19,7 +20,18 @@ from services.openai_chat import ask_llm
 def handle_user_message(message):
     intent = interpret_message(message)
 
-    if intent["type"] == "stock":
+    # Nuovo tipo di intent per dati in tempo reale
+    if intent["type"] == "realtime":
+        data = get_realtime_data(intent["symbol"])
+        if data["success"]:
+            return f"📊 Dati in tempo reale per {data['name']} ({intent['symbol']}):\n" \
+                   f"Prezzo: {data['price']} {data['currency']}\n" \
+                   f"Variazione: {data['change']}\n" \
+                   f"Fonte: {data['source']}"
+        else:
+            return f"❌ Non è stato possibile ottenere dati in tempo reale per {intent['symbol']}: {data['error']}"
+
+    elif intent["type"] == "stock":
         return f"Il prezzo corrente di {intent['symbol']} è {get_price(intent['symbol'])} USD."
 
     elif intent["type"] == "currency":

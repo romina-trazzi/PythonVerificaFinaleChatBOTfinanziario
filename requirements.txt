@@ -6,3 +6,4 @@ fuzzywuzzy[speedup]
 matplotlib
 pdfkit
 dotenv
+beautifulsoup4
