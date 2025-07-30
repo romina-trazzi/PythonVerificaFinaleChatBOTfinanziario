@@ -456,4 +456,31 @@ td {
     td, th {
         padding: 0.5rem;
     }
+    loading-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-dots span {
+    width: 10px;
+    height: 10px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: bounce 1s infinite alternate; /* Animazione di rimbalzo alternata */
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s; /* Ritarda l'animazione del secondo punto */
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s; /* Ritarda l'animazione del terzo punto */
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
 }
