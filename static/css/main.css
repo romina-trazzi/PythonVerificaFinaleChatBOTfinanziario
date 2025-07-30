@@ -209,7 +209,7 @@ h2 {
     max-width: 70%;
     font-weight: 500;
     box-shadow: var(--shadow-soft);
-    border: 1px solid var(--border);
+    border: 2px solid black; /* <-- bordo nero evidente */
     transition: all 0.3s ease;
     word-wrap: break-word;
 }
