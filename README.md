@@ -70,6 +70,7 @@ Apri il browser su http://localhost:5000
 
 ## 📚 Screenshot
 ![static/img/chartpart2.png](https://github.com/romina-trazzi/PythonVerificaFinaleChatBOTfinanziario/blob/master/static/img/finale.JPG)
+![static/img/chartpart1.png](https://github.com/romina-trazzi/PythonVerificaFinaleChatBOTfinanziario/blob/master/static/img/finale2.JPG)
 
 
 
