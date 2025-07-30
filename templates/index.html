@@ -12,9 +12,15 @@
         <h2 class="text-center mb-3">💬 Chatbot Finanziario</h2>
         <div id="chat-box" class="chat-box">
             <div class="message bot">
-                <div class="text">Hey! Pronto a esplorare i mercati finanziari? Chiedi pure prezzi di azioni, trend, analisi tecniche o 
+                <div class="text">Hey! Pronto a esplorare i mercati finanziari? Chiedi pure prezzi di azioni, trend, analisi tecniche o
                     qualsiasi dubbio su investimenti.
-                     Posso anche creare grafici e report su misura per te!"</div>
+                    Posso anche creare grafici e report su misura per te!"</div>
+            </div>
+            <div class="message user">
+                <div class="text">cosa è un azione?</div>
+            </div>
+            <div class="message bot error">
+                <div class="text">Errore dall'API: 401 Client Error: Unauthorized for url: https://openrouter.ai/api/v1/chat/completions</div>
             </div>
         </div>
         <form id="chat-form" class="d-flex">
@@ -26,8 +32,12 @@
             <p class="mt-2">⚡ Un momento, sto consultando i mercati globali...</p>
         </div>
     </div>
+    <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
     <script src="../static/js/chat.js"></script>
 </body>
 </html>
-

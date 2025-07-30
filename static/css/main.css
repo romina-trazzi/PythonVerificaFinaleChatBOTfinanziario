@@ -12,7 +12,7 @@
     --accent-hover: #2563eb;
     --success: #10b981;
     --warning: #f59e0b;
-    --error: #ef4444;
+    --error: #ef4444; /* This is your defined red for errors */
     --background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     --surface: rgba(255, 255, 255, 0.95);
     --surface-dark: rgba(30, 41, 59, 0.95);
@@ -42,7 +42,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
@@ -408,79 +408,83 @@ td {
     margin-right: 0.5rem !important;
 }
 
+/* ===== MESSAGGI DI ERRORE ===== */
+.message.error .text {
+    background: linear-gradient(135deg, var(--error) 0%, #dc2626 100%);
+    color: white; /* Changed to white for readability on red background */
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.2);
+}
+
+.message.error::before {
+    content: '⚠️';
+    background: linear-gradient(135deg, var(--error) 0%, #dc2626 100%);
+    color: white; /* Changed to white for better contrast of the emoji on red background */
+}
+
+.bot .text.error {
+    background: linear-gradient(135deg, var(--error) 0%, #dc2626 100%);
+    color: white; /* Already white, kept for consistency */
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.2);
+}
+
+/* Testo di errore semplice */
+.error-text {
+    color: var(--error) !important;
+    font-weight: 600;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--error);
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     .container-fluid {
         padding: 1rem;
     }
-    
+
     h2 {
         font-size: 1.5rem !important;
         margin-bottom: 1.5rem !important;
     }
-    
+
     .chat-box {
         padding: 1.5rem;
         min-height: 50vh;
         max-height: 60vh;
     }
-    
+
     .user .text,
     .bot .text {
         max-width: 85%;
         padding: 0.875rem 1.25rem;
     }
-    
+
     .message.user::before,
     .message.bot::before {
         min-width: 36px;
         height: 36px;
         font-size: 0.875rem;
     }
-    
+
     #chat-form {
         padding: 0.75rem;
         flex-direction: column;
         gap: 0.75rem;
     }
-    
+
     #chat-input {
         margin-bottom: 0 !important;
         margin-right: 0 !important;
     }
-    
+
     table {
         font-size: 0.875rem;
     }
-    
+
     td, th {
         padding: 0.5rem;
     }
-    loading-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.loading-dots span {
-    width: 10px;
-    height: 10px;
-    background-color: #3498db;
-    border-radius: 50%;
-    margin: 0 5px;
-    animation: bounce 1s infinite alternate; /* Animazione di rimbalzo alternata */
-}
-
-.loading-dots span:nth-child(2) {
-    animation-delay: 0.2s; /* Ritarda l'animazione del secondo punto */
-}
-
-.loading-dots span:nth-child(3) {
-    animation-delay: 0.4s; /* Ritarda l'animazione del terzo punto */
-}
-
-@keyframes bounce {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
-}
 }
