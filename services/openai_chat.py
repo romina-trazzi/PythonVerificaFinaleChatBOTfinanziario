@@ -16,7 +16,7 @@ HEADERS = {
 
 def ask_llm(message):
     url = "https://openrouter.ai/api/v1/chat/completions"
-    model = "cognitivecomputations/dolphin-mistral-24b-venice-edition:free"
+    model = "mistralai/mistral-small-3.2-24b-instruct:free"
 
     payload = {
         "model": model,

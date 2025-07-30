@@ -1,8 +1,16 @@
+import sys
 import os
 import requests
 from dotenv import load_dotenv
 
+# 🔧 Aggiunge la cartella principale del progetto al sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from services.openai_chat import ask_llm
+
 load_dotenv()
+
+print("✅ Risposta:", ask_llm("Cos'è la borsa?"))
 
 api_key = os.getenv("OPENROUTER_API_KEY")
 headers = {
