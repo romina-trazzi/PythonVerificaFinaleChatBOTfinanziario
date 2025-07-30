@@ -5,3 +5,4 @@ requests
 fuzzywuzzy[speedup]
 matplotlib
 pdfkit
+dotenv
