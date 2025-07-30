@@ -1,5 +1,5 @@
 /* ===== RESET E VARIABILI ===== */
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -110,7 +110,6 @@ h2 {
 .chat-box::-webkit-scrollbar {
     width: 6px;
 }
-
 .chat-box::-webkit-scrollbar-track {
     background: transparent;
 }
@@ -452,8 +451,8 @@ td {
     table {
         font-size: 0.875rem;
     }
-    
-    td, th {
+     td, th {
         padding: 0.5rem;
     }
+   
 }
