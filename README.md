@@ -69,7 +69,8 @@ Apri il browser su http://localhost:5000
 
 
 ## 📚 Screenshot
-![chartpart2](static/img/chartpart2.png)
+![static/img/chartpart2.png](https://github.com/romina-trazzi/PythonVerificaFinaleChatBOTfinanziario/blob/master/static/img/finale.JPG)
+
 
 
 ## 📁 Struttura del progetto
